@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 50px;
+  background: #ffc94a;
+}
+
+.nav-items {
+  display: flex;
+  width: 30vw;
+  justify-content: space-evenly;
+  font-weight: 400;
+  color: white;
+}
+.nav-items > .list-items {
+  list-style-type: none;
+  font-size: 24px;
+  padding: 5px;
+  cursor: pointer;
+}
+.list-items:hover {
+  color: chocolate;
+}
