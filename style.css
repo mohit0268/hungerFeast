@@ -12,6 +12,7 @@
   height: 100px;
   padding: 50px;
   background: #ffc94a;
+  box-shadow: rgba(127, 126, 126, 0.2) 1px 5px 5px 5px;
 }
 
 .nav-items {
@@ -29,4 +30,38 @@
 }
 .list-items:hover {
   color: chocolate;
+}
+
+.res-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 5px;
+}
+.res-cards {
+  width: 260px;
+  height: 320px;
+  margin: 50px 20px;
+  border-radius: 5px;
+  box-shadow: rgba(153, 152, 152, 0.2) 0px 5px 5px 0px;
+  cursor: pointer;
+}
+
+.res-image > img {
+  margin: 0px 5px;
+  width: 250px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+}
+.product-detail {
+  margin: 0px 20px;
+  display: block;
+}
+
+.res-detail {
+  margin: 5px 0;
 }

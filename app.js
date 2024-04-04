@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Header from './components/Header'
+import AllRestaurant from "./components/AllRestaurants";
+
 
 /*
 *Applayout
@@ -22,25 +25,21 @@ import ReactDOM from "react-dom";
         -contactdetails
 */
 
-const Header = () => {
-  return(
-    <div className="header">
-        <div className="logo">
-            <img src="./images/logo" alt="logo" />
-        </div>
-        <div className="navbar">
-            <ui className="nav-items">
-                <li className="list-items">Home</li>
-                <li className="list-items">About</li>
-                <li className="list-items">Contact us</li>
-                <li className="list-items">Cart</li>
-            </ui>
-        </div>
+
+
+
+
+
+
+const AppLayout = () => {
+  return (
+    <div>
+      <Header />
+      <AllRestaurant />
     </div>
   );
 };
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Header />);
+root.render(<AppLayout />);
