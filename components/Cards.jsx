@@ -2,7 +2,7 @@ import RES_LIST from "../utils/constants";
 
 const Cards = (props) => {
     const {resData} = props;
-    const {cloudinaryImageId,name,rating,cuisines,areaName} = resData
+    const {cloudinaryImageId,name,avgRating,cuisines,areaName} = resData
     return (
       <div className="res-cards">
         <div className="res-image">
@@ -11,7 +11,7 @@ const Cards = (props) => {
         </div>
         <div className="product-detail">
             <h3 className="res-name">{name}</h3>
-            <h4 className="res-rating">⭐{rating}</h4>
+            <h4 className="res-rating">⭐{avgRating}</h4>
             <p className="res-detail">{cuisines.join(",")}</p>
             <p className="res-detail">{areaName}</p>
         </div>
