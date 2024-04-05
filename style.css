@@ -1,23 +1,30 @@
+/* desktop resolution 1280px and greater */
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Times New Roman", Times, serif;
+  overflow-x: hidden;
 }
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100px;
   padding: 50px;
   background: #ffc94a;
   box-shadow: rgba(127, 126, 126, 0.2) 1px 5px 5px 5px;
 }
 
+.navbar{
+    width: 50%;
+    margin:0 10px;
+}
+
 .nav-items {
   display: flex;
-  width: 30vw;
   justify-content: space-evenly;
   font-weight: 400;
   color: white;
@@ -33,9 +40,11 @@
 }
 
 .res-container {
+  max-width: 100%;
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
   gap: 5px;
+  margin: 0 50px;
 }
 .res-cards {
   width: 260px;
@@ -65,3 +74,94 @@ img {
 .res-detail {
   margin: 5px 0;
 }
+
+.filter {
+  max-width: 80%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 100px;
+  margin: 50px 0 0 0;
+}
+.btns {
+  width: 150px;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+}
+.btns:hover{
+    box-shadow: rgba(153, 152, 152, 0.2) 0px 5px 5px 0px;
+    border:1px solid #bebcbc;
+}
+
+
+
+
+/* Responsive Design */
+
+
+  /* low-resolution table and ipad in portrait mode*/
+  @media only screen and (max-width: 1024px) {
+    
+      .navbar{
+        margin: 0 5px;
+        width: 60%;
+      }
+      .res-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        margin: 0 20px;
+      }
+      .nav-items > .list-items {
+        font-size: 22px;
+        font-weight: 400;
+      }
+      .list-items:hover {
+        color: chocolate;
+      }
+  }
+
+
+  /* low-resolution table and ipad */
+@media only screen and (max-width: 767px) {
+  .header{
+    width:100vw;
+  }
+  .navbar{
+    margin: 0 3px;
+      width: 70%;
+      margin:0 5px;
+  }
+  .nav-items > .list-items {
+    font-size: 20px;
+    font-weight: 100;
+  }
+  .res-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin: 0 20px;
+  }
+  .list-items:hover {
+    color: chocolate;
+  }
+}
+
+
+/* mobile view */
+@media only screen and (max-width: 480px) {
+  .res-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    margin: 0 10px;
+  }
+  }
+
+
+
+
