@@ -23,4 +23,11 @@ Applayout
   -contactdetails
 
 new features introduced
-    -Top rated restaurants
+-Top rated restaurants
+
+#React Hooks
+-Normal JS utility function
+
+-useState()
+-useEffect()
+

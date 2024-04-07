@@ -1,5 +1,5 @@
 const RES_LIST = [
-  {
+    {
     id: "44462",
     name: "XO Belgian Waffle",
     cloudinaryImageId: "hqtrdytdqec0ih3pfy5u",

@@ -6,8 +6,7 @@ const Cards = (props) => {
     return (
       <div className="res-cards">
         <div className="res-image">
-          <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId}
- alt="img" className="img"/>
+          <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId}alt="img" className="img"/>
         </div>
         <div className="product-detail">
             <h3 className="res-name">{name}</h3>
