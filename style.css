@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif,sans-serif;
   overflow-x: hidden;
 }
 .header {
@@ -96,7 +96,31 @@ img {
     box-shadow: rgba(153, 152, 152, 0.2) 0px 5px 5px 0px;
     border:1px solid #bebcbc;
 }
+.login-btn{
+  padding:5px 20px;
+  cursor: pointer;
+  border-radius: 10%;
+  border:none;
+  font-size:16px;
+}
 
+
+/* shimmer resembles the actual ui while loading it will not show blank ui*/
+.shimmer-container{
+  position: absolute;
+  top:20%;
+  max-width: 100%;
+  display: grid;
+  gap: 5px;
+  margin-left:20px;
+}
+.shimmer-card{
+  width: 260px;
+  height: 320px;
+  margin: 50px 20px;
+  border-radius: 5px;
+  background:rgba(150, 148, 148, 0.5)
+}
 
 
 
