@@ -30,4 +30,8 @@ new features introduced
 
 -useState()
 -useEffect()
+  -It accepts 2 arguments which is callback function and dependency array(it controls when the effect should run);
+  -call back function is called as soon as the render cycle ends 
+
+
 

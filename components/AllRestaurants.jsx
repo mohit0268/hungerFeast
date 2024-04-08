@@ -1,12 +1,22 @@
 import Cards from "./Cards";
-import RES_LIST from "../utils/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const AllRestaurant = (props) => {
-  const [listOfRestaurants, setlistofRestaurant] = useState(RES_LIST);
+  const [listOfRestaurants, setlistofRestaurant] = useState([]);
   const { resData } = props;
 
-  return (
+  useEffect(()=>{
+    fetchApi();
+  },[]);
+
+  const fetchApi = async() => {
+    const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=12.9351929&lng=77.62448069999999");
+    const json = await data.json();
+    setlistofRestaurant(json.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+  }
+  
+  return listOfRestaurants.length === 0 ? (<Shimmer />) :(
     <div className="section">
       <div className="filter">
         <button
