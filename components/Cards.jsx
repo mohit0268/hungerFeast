@@ -2,7 +2,7 @@ import RES_LIST from "../utils/constants";
 
 const Cards = (props) => {
     const {resData} = props;
-    const {cloudinaryImageId,name,avgRating,cuisines,areaName} = resData
+    const {cloudinaryImageId,name,avgRating,cuisines,areaName} = resData?.info
     return (
       <div className="res-cards">
         <div className="res-image">
