@@ -4,7 +4,9 @@ import Header from './components/Header'
 import AllRestaurant from "./components/AllRestaurants";
 import About from "./src/pages/About";
 import ContactUs from './src/pages/ContactUs';
-import Cart from "./src/pages/Cart"
+import Cart from "./src/pages/Cart";
+import RestaurantMenu from "./components/RestaurantMenu";
+import ErrorPage from "./components/ErrorPage";
 import { createBrowserRouter ,RouterProvider, Outlet} from "react-router-dom";
 
 const AppLayout = () => {
@@ -37,7 +39,12 @@ const appRouter = createBrowserRouter([
     {
       path:'/cart',
       element:<Cart/>,
-    }]
+    },
+    {
+      path:'/restaurants/:resId',
+      element:<RestaurantMenu/>
+    }],
+    errorElement:<ErrorPage />
   }
   ])
 
