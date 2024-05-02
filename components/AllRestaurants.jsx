@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { RESTAURANT_CARD_API } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const AllRestaurant = () => {
 
@@ -14,6 +15,12 @@ const AllRestaurant = () => {
     fetchApi();
   },[])   
 
+  const Status = useOnlineStatus();
+  if(Status === false){
+    return(
+        <h1>You're offline. Please check your internet connection.</h1>
+    )
+  }
 
   const fetchApi = async () => {
     const data = await fetch(RESTAURANT_CARD_API);
