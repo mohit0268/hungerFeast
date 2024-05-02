@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
   const [btnName,setbtnName] = useState('Login');
@@ -9,8 +10,7 @@ const Header = () => {
     return (
       <div className="header">
         <div className="logo">
-          <img src="./images/logo" alt="logo" />
-          
+          <img src={LOGO_URL} alt="logo" />
         </div>
         <div className="navbar">
           <ui className="nav-items">
