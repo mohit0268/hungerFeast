@@ -8,18 +8,18 @@ const Header = () => {
   const online_status = useOnlineStatus();
 
     return (
-      <div className="header">
-        <div className="logo">
-          <img src={LOGO_URL} alt="logo" />
+      <div className="flex justify-between bg-yellow-400 shadow-lg">
+        <div className="">
+          <img className='w-36' src={LOGO_URL} alt="logo" />
         </div>
-        <div className="navbar">
-          <ui className="nav-items">
-            <span>{online_status ? "🟢" : "🔴"}</span>
-            <li className="list-items"><Link to='/'>Home</Link></li>
-            <li className="list-items"><Link to='/about'>About</Link></li>
-            <li className="list-items"><Link to='/contact'>Contact us</Link></li>
-            <li className="list-items"><Link to='/cart'>Cart</Link></li>
-            <button className="login-btn" onClick={() => {
+        <div className="flex items-center">
+          <ui className="flex p-4 m-4">
+            <li className="px-4 list-none">Status:{online_status ? "🟢" : "🔴"}</li>
+            <li className="px-4 list-none"><Link to='/'>Home</Link></li>
+            <li className="px-4 list-none"><Link to='/about'>About</Link></li>
+            <li className="px-4 list-none"><Link to='/contact'>Contact us</Link></li>
+            <li className="px-4 list-none"><Link to='/cart'>Cart</Link></li>
+            <button className="px-4" onClick={() => {
               btnName == "Login" ? setbtnName("Logout") : setbtnName("Login");
             }}>{btnName}</button>
           </ui>
