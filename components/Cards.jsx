@@ -7,7 +7,7 @@ const Cards = (props) => {
         <div className="product-detail">
             <h3 className="font-bold pt-2 text-lg">{name}</h3>
             <h4 className="res-rating">⭐{avgRating} - {sla.deliveryTime} Mins</h4>
-            <p className="res-detail">{cuisines.join(", ")}</p>
+            <p className="res-detail">{cuisines.slice(0,5).join(", ")}</p>
             <p className="res-detail">{costForTwo}</p>
             <p className="res-detail">{areaName}</p>
         </div>
