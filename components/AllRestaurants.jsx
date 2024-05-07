@@ -1,15 +1,17 @@
-import Cards from "./Cards";
+import Cards , {PromotedLabel} from "./Cards";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { RESTAURANT_CARD_API } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
+
 const AllRestaurant = () => {
 
   const [listOfRestaurants, setlistofRestaurant] = useState([]);
   const [filteredRestaurant,setFilteredRestaurant] = useState([]);
   const [searchText,setSearchText] = useState("");
+  const RestaurantPromoted = PromotedLabel(Cards);
 
   useEffect(()=>{
     fetchApi();
@@ -25,11 +27,11 @@ const AllRestaurant = () => {
   const fetchApi = async () => {
     const data = await fetch(RESTAURANT_CARD_API);
     const json = await data.json();
-    console.log(json);
     setlistofRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-  
   }
+
+//   console.log(listOfRestaurants)
 return listOfRestaurants?.length === 0 ? 
   (<Shimmer/>)
   :
@@ -70,7 +72,11 @@ return listOfRestaurants?.length === 0 ?
 
           <div className="flex flex-wrap mx-8">
               {filteredRestaurant?.map((restaurant) => (
-                  <Link  key={restaurant.info.id} to={'/restaurants/' + restaurant.info.id }><Cards resData={restaurant} /></Link>
+                  <Link  key={restaurant.info.id} to={'/restaurants/' + restaurant.info.id }>
+                    {
+                        restaurant.info.promoted ? <RestaurantPromoted resData={restaurant} /> : <Cards resData={restaurant} />
+                    }
+                    </Link>
               ))}
           </div>
       </div>

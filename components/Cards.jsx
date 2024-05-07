@@ -1,3 +1,4 @@
+
 const Cards = (props) => {
     const {resData} = props;
     const {cloudinaryImageId,name,avgRating,cuisines,costForTwo,areaName,sla} = resData?.info
@@ -14,5 +15,17 @@ const Cards = (props) => {
       </div>
     );
   };
+
+  //High order component for Restaurant promoted
+  export const PromotedLabel = (Cards) => {
+    return (props) => {
+      return (
+        <div>
+          <label className="absolute bg-black text-white mx-4 px-2 rounded-sm">Promoted</label>
+          <Cards {...props}/>
+        </div>
+      )
+    }
+  }
 
   export default Cards;
