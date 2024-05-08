@@ -29,6 +29,7 @@ const AllRestaurant = () => {
     const json = await data.json();
     setlistofRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log(json?.data?.cards[2])
   }
 
 //   console.log(listOfRestaurants)
