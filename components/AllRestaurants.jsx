@@ -27,9 +27,9 @@ const AllRestaurant = () => {
   const fetchApi = async () => {
     const data = await fetch(RESTAURANT_CARD_API);
     const json = await data.json();
-    setlistofRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    console.log(json?.data?.cards[2])
+    setlistofRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    
   }
 
 //   console.log(listOfRestaurants)
