@@ -42,6 +42,26 @@ new features introduced
   -Client side Routing 
   -Server Side Routing
   
+-----------
+# Redux
+ - Redux is a js library for managing the states globally
+ - using Redux application becomes easy to debug
+ - it does'nt always need react to use redux 
+
+# Redux toolkit
+- it is a utility standard way to write redux logic
+- it is a less complicated version of redux
+- since it a utility we don't require too much packages to do anything useful
+
+## Redux Initialization
+- Install @reduxjs/toolkit and react-redux
+- build our store
+- connect the store to our app
+- slice (cartSlice)
+- dispatch (action)
+- reducer
+- selector
+
 
 
 
