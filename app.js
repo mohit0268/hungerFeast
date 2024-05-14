@@ -2,12 +2,13 @@ import React,{Suspense, lazy} from "react";
 import ReactDOM from "react-dom/client";
 import Header from './components/Header'
 import AllRestaurant from "./components/AllRestaurants";
-
 import ContactUs from './src/pages/ContactUs';
 import Cart from "./src/pages/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import ErrorPage from "./components/ErrorPage";
 import { createBrowserRouter ,RouterProvider, Outlet} from "react-router-dom";
+import { Provider } from "react-redux";
+import appStore from './store/appStore'
 
 //chunking 
 //code splitting
@@ -17,10 +18,12 @@ const About = lazy(()=>import("./src/pages/About"));
 
 const AppLayout = () => {
   return (
+    <Provider store={appStore}>
     <div>
       <Header />
       <Outlet/>
     </div>
+    </Provider>
   );
 };
 
