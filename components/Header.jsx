@@ -2,11 +2,16 @@ import { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { LOGO_URL } from "../utils/constants";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnName,setbtnName] = useState('Login');
   const online_status = useOnlineStatus();
 
+  //subscribing to the store using a selector
+    const cartItems = useSelector((store) => store.cart.items)
+    console.log(cartItems.length)
+   
     return (
       <div className="flex justify-between bg-yellow-400 shadow-lg">
         <div className="">
@@ -18,7 +23,7 @@ const Header = () => {
             <li className="px-4 list-none"><Link to='/'>Home</Link></li>
             <li className="px-4 list-none"><Link to='/about'>About</Link></li>
             <li className="px-4 list-none"><Link to='/contact'>Contact us</Link></li>
-            <li className="px-4 list-none"><Link to='/cart'>Cart</Link></li>
+            <li className="px-4 list-none"><Link to='/cart'>Cart ({cartItems.length})</Link></li>
             <button className="px-4" onClick={() => {
               btnName == "Login" ? setbtnName("Logout") : setbtnName("Login");
             }}>{btnName}</button>
