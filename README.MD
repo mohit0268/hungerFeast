@@ -62,6 +62,18 @@ new features introduced
 - reducer
 - selector
 
+# Types of Testing (Developer)
+- Unit Testing
+- Integration Testing 
+- End to End Testing
 
+## Setting up testing in our app
+- Installed React Testing library
+- Installed Jest
+- Install babel dependencies
+- configure babel in babel.config.js
+- configure parcel config file to disabel babel transpilation in parcel
+- Initialize jest
+- Install jsdom Library
 
 
