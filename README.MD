@@ -74,6 +74,9 @@ new features introduced
 - configure babel in babel.config.js
 - configure parcel config file to disabel babel transpilation in parcel
 - Initialize jest
-- Install jsdom Library
+- Install jsdom Library 
+- Install @babel/preset-react - to make jsx work in test cases
+- configure @babel/preset-react
+- Install @testing-library/jest-dom to access function inside this file
 
 
