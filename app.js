@@ -2,7 +2,7 @@ import React,{Suspense, lazy} from "react";
 import ReactDOM from "react-dom/client";
 import Header from './components/Header'
 import AllRestaurant from "./components/AllRestaurants";
-import ContactUs from './src/pages/ContactUs';
+import ContactUs from "./src/pages/ContactUs";
 import Cart from './src/pages/Cart'
 import RestaurantMenu from "./components/RestaurantMenu";
 import ErrorPage from "./components/ErrorPage";
