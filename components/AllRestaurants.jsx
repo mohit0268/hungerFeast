@@ -27,8 +27,8 @@ const AllRestaurant = () => {
   const fetchApi = async () => {
     const data = await fetch(RESTAURANT_CARD_API);
     const json = await data.json();
-    setlistofRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setlistofRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     
   }
 
@@ -37,10 +37,10 @@ return listOfRestaurants?.length === 0 ?
   (<Shimmer/>)
   :
   (
-      <div className="section">
+      <div className="w-full flex flex-col flex-wrap overflow-x-hidden">
         <h1 className="my-6 px-8 text-3xl font-bold">What's on your mind?</h1>
-          <div className="filter flex">
-              <div className="filter-search mx-6 my-2 p-4">
+          <div className="filter block xs:flex ">
+              <div className="filter-search px-5 mb-3 max-w-fit shrink-0">
                   <input type="text" 
                       className="search-text border border-solid border-black rounded" 
                       value={searchText} 
@@ -50,7 +50,7 @@ return listOfRestaurants?.length === 0 ?
                       }
                   />
                   <button 
-                      className="search-btn mx-2 px-6 py-1 bg-amber-300 text-white border-solid rounded-lg"
+                      className="search-btn mx-2 px-6 py-1  text-white border-solid rounded-lg bg-amber-300 hover:bg-amber-200 "
                       onClick={()=>{
                           console.log(searchText);
                           const filterRestaurant = listOfRestaurants.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -59,9 +59,9 @@ return listOfRestaurants?.length === 0 ?
                       }}    
                   >Search</button>
               </div>
-            <div className="search-btn mx-2 py-1 flex items-center ">
+            <div className="search-btn mx-6 xs:mx-2 max-w-fit shrink-0">
             <button
-                  className="px-6 py-1  bg-gray-200 rounded-lg"
+                  className="px-6 py-1  bg-gray-200 rounded-lg hover:shadow-md"
                   onClick={() => {
                       const filteredList = listOfRestaurants.filter((res)=>res.info.avgRating > 4.3);
                       setFilteredRestaurant(filteredList)
@@ -70,8 +70,8 @@ return listOfRestaurants?.length === 0 ?
             </div>
               
           </div>
-
-          <div className="flex flex-wrap mx-8">
+        <div className=" w-full flex justify-center">
+          <div className="w-screen grid gap-2  xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
               {filteredRestaurant?.map((restaurant) => (
                   <Link  key={restaurant.info.id} to={'/restaurants/' + restaurant.info.id }>
                     {
@@ -79,6 +79,7 @@ return listOfRestaurants?.length === 0 ?
                     }
                     </Link>
               ))}
+          </div>
           </div>
       </div>
   )
