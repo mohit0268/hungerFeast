@@ -6,6 +6,7 @@ import ContactUs from "./src/pages/ContactUs";
 import Cart from './src/pages/Cart'
 import RestaurantMenu from "./components/RestaurantMenu";
 import ErrorPage from "./components/ErrorPage";
+import Footer from "./components/Footer";
 import { createBrowserRouter ,RouterProvider, Outlet} from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from './store/appStore'
@@ -22,6 +23,7 @@ const AppLayout = () => {
     <div>
       <Header />
       <Outlet/>
+      <Footer/>
     </div>
     </Provider>
   );
