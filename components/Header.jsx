@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { LOGO_URL } from "../utils/constants";
 import { useSelector } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const Header = () => {
   const [btnName, setbtnName] = useState("Login");
@@ -29,7 +29,7 @@ const Header = () => {
           />
         </div>
         <div className="flex items-center px-1 mx-2">
-          <ui className="hidden md:flex mx-4">
+          <ul className="hidden md:flex mx-4">
             <li className="px-4 list-none">
               Status:{online_status ? "🟢" : "🔴"}
             </li>
@@ -53,7 +53,7 @@ const Header = () => {
             >
               {btnName}
             </button>
-          </ui>
+          </ul>
           <button
             className="mx-8 text-amber-950 md:hidden"
             onClick={MenuClickHandler}
@@ -67,7 +67,7 @@ const Header = () => {
 
       {/* //Responsiveness below 768px */}
 
-      <div id="nav-dailog" className="flex justify-center max-w-full">
+      <div id="nav-dailog" className="max-w-full hidden md:hidden">
         <div className="absolute w-full rounded-lg">
           <div className="block p-4 bg-white rounded-lg">
             <li className="p-4 list-none rounded-lg my-1 shadow-xl bg-white hover:bg-gray-100">
